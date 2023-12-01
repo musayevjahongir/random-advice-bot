@@ -71,7 +71,7 @@ def main(url: str):
             text = current_update['message'].get('text')
 
             if text is None:
-                pass
+                send_message(url, user['id'], 'send a message.')
 
             elif text == '/start':
                 send_message(url, user['id'], welcome_msg)
@@ -83,6 +83,9 @@ def main(url: str):
             elif text == '/busywork':
                 advice = bored.get_activity_by_type('busywork')['activity']
                 send_message(url, user['id'], advice)
+
+            else:
+                send_message(url, user['id'], 'error message.')
 
             last_update_id = current_update['update_id']
 
