@@ -34,7 +34,20 @@ class Bored:
         Returns:
             dict: activity data
         '''
-        pass
+        endpoint = "activity/"
+        url = self.url + endpoint
+
+        payload = {
+            'type': type
+        }
+
+        response = requests.get(url, params=payload)
+
+        if response.status_code == 200:
+            return response.json()
+        
+        return response.status_code
+    
 
     def get_activity_by_id(self, key: int) -> dict:
         '''get activity by key
