@@ -84,10 +84,39 @@ def main(url: str):
                 advice = bored.get_activity_by_type('busywork')['activity']
                 send_message(url, user['id'], advice)
 
+            elif text == '/education':
+                advice = bored.get_activity_by_type('education')['activity']
+                send_message(url, user['id'], advice)
+
+            elif text == ' /recreational':
+                advice = bored.get_activity_by_type('recreational')['activity']
+                send_message(url, user['id'], advice)
+                
+            elif text == '/social':
+                advice = bored.get_activity_by_type('social')['activity']
+                send_message(url, user['id'], advice)
+
+            elif text == '/diy':
+                advice = bored.get_activity_by_type('diy')['activity']
+                send_message(url, user['id'], advice)
+
+            elif text == '/charity':
+                advice = bored.get_activity_by_type('charity')['activity']
+                send_message(url, user['id'], advice)
+
+            elif text == '/cooking':
+                advice = bored.get_activity_by_type('cooking')['activity']
+                send_message(url, user['id'], advice)
+
+            elif text == '/relaxation':
+                advice = bored.get_activity_by_type('relaxation')['activity']
+                send_message(url, user['id'], advice)
+
             else:
                 send_message(url, user['id'], 'error message.')
 
             last_update_id = current_update['update_id']
+            
 
         sleep(0.5)
 
